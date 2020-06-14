@@ -1,0 +1,17 @@
+{
+  "name": "AnimaisFantasticos",
+  "version": "1.0.0",
+  "description": "Um repositório contendo meus estudos, testes e pequenos projetos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2"
+  }
+}
