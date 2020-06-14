@@ -1,7 +1,13 @@
 # Estudos e testes
 
-Um repositório contendo meus estudos, testes e pequenos projetos.
+Projeto Animais Fantásticos, desenvolvovido e melhorado durante o curso de JavaScript avançado na Origamid.
 
-## Projeto atual
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
-Atualmente estou trabalhando com [testes em javascript](https://github.com/augustomarsola/study_projects/tree/master/Javascript/Origamid%20Aulas) com base nas aulas oferecidas pela Origamid.
+![Projeto Animais Fantásticos](img/animais-bg.png "Animais Fantásticos")
+
+## Tecnlogias usadas
+
+- HTML
+- CSS
+- JavaScript (ES6+)
