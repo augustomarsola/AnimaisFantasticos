@@ -4,15 +4,25 @@
   "description": "Um repositório contendo meus estudos, testes e pequenos projetos.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.21.2"
+    "eslint-plugin-import": "^2.21.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "whatwg-fetch": "^3.0.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.10.1"
   }
 }
