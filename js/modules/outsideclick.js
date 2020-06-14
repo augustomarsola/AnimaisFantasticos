@@ -1,15 +1,6 @@
 export default function outsideClick(element, events, callback) {
   const html = document.documentElement;
-  const outside = 'data-outside';
-
-  if (!element.hasAttribute(outside)) {
-    element.setAttribute(outside, '');
-    events.forEach((userEvent) => {
-      setTimeout(() => {
-        html.addEventListener(userEvent, handleOutsideClick);
-      });
-    });
-  }
+  const outside = "data-outside";
 
   function handleOutsideClick(e) {
     if (!element.contains(e.target)) {
@@ -19,5 +10,14 @@ export default function outsideClick(element, events, callback) {
       });
       callback();
     }
+  }
+
+  if (!element.hasAttribute(outside)) {
+    element.setAttribute(outside, "");
+    events.forEach((userEvent) => {
+      setTimeout(() => {
+        html.addEventListener(userEvent, handleOutsideClick);
+      });
+    });
   }
 }
