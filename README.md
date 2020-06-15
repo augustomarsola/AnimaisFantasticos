@@ -1,4 +1,4 @@
-# Estudos e testes
+# Animais Fantásticos
 
 Projeto Animais Fantásticos, desenvolvovido e melhorado durante o curso de JavaScript avançado na Origamid.
 
@@ -9,3 +9,4 @@ Projeto Animais Fantásticos, desenvolvovido e melhorado durante o curso de Java
 - HTML
 - CSS
 - JavaScript (ES6+)
+<!-- TODO Adicionar babbel e webpack -->
