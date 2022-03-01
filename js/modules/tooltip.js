@@ -11,22 +11,22 @@ export default function initTooltip() {
   const onMouseLeave = {
     handleEvent() {
       this.tooltipBox.remove();
+      this.element.removeEventListener("mousemove", onMouseMove);
       this.element.removeEventListener("mouseleave", onMouseLeave);
-      this.element.removeEventListener("mouseleave", onMouseMove);
     },
   };
 
-  function criarTooltipBox(element) {
+  function createTooltipBox(element) {
     const tooltipbox = document.createElement("div");
     const text = element.getAttribute("aria-label");
-    tooltipbox.classList.add("tooltip");
     tooltipbox.innerText = text;
+    tooltipbox.classList.add("tooltip");
     document.body.appendChild(tooltipbox);
     return tooltipbox;
   }
 
   function onMouseOver() {
-    const tooltipBox = criarTooltipBox(this);
+    const tooltipBox = createTooltipBox(this);
 
     onMouseMove.tooltipBox = tooltipBox;
     this.addEventListener("mousemove", onMouseMove);
@@ -36,7 +36,7 @@ export default function initTooltip() {
     this.addEventListener("mouseleave", onMouseLeave);
   }
 
-  tooltips.forEach((tips) => {
-    tips.addEventListener("mouseover", onMouseOver);
+  tooltips.forEach((tooltip) => {
+    tooltip.addEventListener("mouseover", onMouseOver);
   });
 }
