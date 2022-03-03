@@ -1,4 +1,4 @@
-export default class iniTabNav {
+export default class TabNav {
   constructor(menu, content) {
     this.tabMenu = document.querySelectorAll(menu);
     this.tabContent = document.querySelectorAll(content);
