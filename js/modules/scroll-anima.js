@@ -5,22 +5,36 @@ export default class ScrollAnima {
     this.ativo = "ativo";
 
     // Bind do callback, ligação ao this
-    this.animaScroll = this.animaScroll.bind(this);
+    this.checkDistance = this.checkDistance.bind(this);
   }
 
-  animaScroll() {
-    this.sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const isSectionVisible = sectionTop - this.windowMetade < 0;
-      if (isSectionVisible) section.classList.add(this.ativo);
-      else if (section.classList.contains(this.ativo))
-        section.classList.remove(this.ativo);
+  // Pega a distância dos elementos em relação ao topo da página
+  getDistance() {
+    this.distance = [...this.sections].map((section) => {
+      const offset = section.offsetTop;
+      return {
+        element: section,
+        offset: Math.floor(offset - this.windowMetade),
+      };
+    });
+  }
+
+  // Verifica a distancia dos elementos em relação ao topo da página
+  // E aplica o efeito da animação
+  checkDistance() {
+    this.distance.forEach((section) => {
+      if (window.scrollY > section.offset) {
+        section.element.classList.add(this.ativo);
+      } else if (section.element.classList.contains(this.ativo)) {
+        section.element.classList.remove(this.ativo);
+      }
     });
   }
 
   init() {
-    this.animaScroll();
-    window.addEventListener("scroll", this.animaScroll);
+    this.getDistance();
+    this.checkDistance();
+    window.addEventListener("scroll", this.checkDistance);
 
     return this;
   }
