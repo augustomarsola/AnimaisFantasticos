@@ -1,3 +1,5 @@
+import debounce from "./debounce";
+
 export default class ScrollAnima {
   constructor(sections) {
     this.sections = document.querySelectorAll(sections);
@@ -5,7 +7,7 @@ export default class ScrollAnima {
     this.ativo = "ativo";
 
     // Bind do callback, ligação ao this
-    this.checkDistance = this.checkDistance.bind(this);
+    this.checkDistance = debounce(this.checkDistance.bind(this), 50);
   }
 
   // Pega a distância dos elementos em relação ao topo da página
